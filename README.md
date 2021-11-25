@@ -5,13 +5,18 @@ grafana与所有数据源均可互通
 
 ## grafana
 
-默认账号密码都是`admin`，默认访问端口`3000`
+| HOSTNAME | PORT | USER  | PASSWORD |
+| ------   | ---- | ----- | -------- |
+| grafana  | 3000 | admin | admin    |
+
 如提示权限问题请执行如下命令
 
 ```bash
 cd grafana/
 ./set_privilege.sh
 ```
+
+------------
 
 ## 数据源
 
