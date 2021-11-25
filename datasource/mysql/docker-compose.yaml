@@ -1,0 +1,21 @@
+version: '2.2'
+
+networks:
+  default:
+    name: monitor-network
+    external: true
+
+services:
+  db:
+    image: mariadb:10.7
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=monitor
+    volumes:
+      - ./data/:/var/lib/mysql:rw
+    ports:
+      - "3306:3306"
+    networks:
+      - default

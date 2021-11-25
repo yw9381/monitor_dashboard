@@ -1,0 +1,22 @@
+version: '2.2'
+
+networks:
+  default:
+    name: monitor-network
+    external: true
+
+services:
+  db:
+    image: mongo:5.0.4
+    restart: always
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    volumes:
+      - ./data/:/data:rw
+      - ./redis.conf:/etc/redis.conf:rw
+    ports:
+      - "27017:27017"
+    networks:
+      - default

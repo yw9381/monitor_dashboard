@@ -1,0 +1,21 @@
+version: '2.2'
+
+networks:
+  default:
+    name: monitor-network
+    external: true
+
+services:
+  db:
+    image: postgres:10
+    container_name: postgresql
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=monitor
+    volumes:
+      - ./data:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+    networks:
+      - default

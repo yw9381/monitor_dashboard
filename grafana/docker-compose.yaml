@@ -1,0 +1,18 @@
+version: '2.2'
+
+networks:
+  default:
+    name: monitor-network
+    external: true
+services:
+  grafana:
+    image: grafana/grafana:8.2.5
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/etc/grafana:rw
+      - ./data:/var/lib/grafana:rw
+    networks:
+      - default
