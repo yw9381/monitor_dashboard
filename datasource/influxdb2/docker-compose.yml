@@ -17,7 +17,7 @@ services:
       - DOCKER_INFLUXDB_INIT_ORG=monitor
       - DOCKER_INFLUXDB_INIT_BUCKET=monitor
     volumes:
-      - ./config.yml:/etc/influxdb2/config.yml:ro
+      - ./config/config.yml:/etc/influxdb2/config.yml:ro
       - ./data/:/var/lib/influxdb2:rw
     ports:
       - "8086:8086"

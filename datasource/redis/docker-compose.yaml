@@ -12,7 +12,7 @@ services:
     restart: always
     volumes:
       - ./data/:/data:rw
-      - ./redis.conf:/etc/redis.conf:rw
+      - ./config/redis.conf:/etc/redis.conf:rw
     ports:
       - "6379:6379"
     command: ["redis-server", "/etc/redis.conf"]
