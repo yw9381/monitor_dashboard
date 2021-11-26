@@ -1,7 +1,9 @@
-# 监控面板
+## 如何使用
 
+本仓库是方便搭建基于grafana监控全家桶而诞生的  
+需要预先安装`docker`及`docker-compose`，需要什么数据源请进入`datasource`中启动相应的数据库，之后使用grafana连接该数据库即可使用  
 所有配置文件都在对应服务的`config`目录，所有的持久化数据都在对应服务的`data`目录中  
-grafana与所有数据源均可互通
+grafana与所有数据源均可互通，直接填写对应的HOSTNAME即可
 
 ## grafana
 
